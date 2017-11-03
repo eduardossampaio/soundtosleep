@@ -27,54 +27,51 @@ export default class App extends Component<{}> {
             width: '100%',
             height: '100%',
           }}
-          source={require("app/images/park.jpg")}
+          source={require("app/images/forest2.jpg")}
         >
 
-        <Container>
-          <Header>
-            <Left>
-              <Button transparent>
-                <Icon name='menu' />
-              </Button>
-            </Left>
-            <Body>
-              <Title>Header</Title>
-            </Body>
-            <Right>
-              
-            </Right>
-          </Header>              
-          <Content style={{marginTop:20}}>
-            <Grid>
-              <Row>
-                <Col style={styles.column}>
+          <Container>
+            <Header style={styles.toolbar}>
+              <Left style={{flex:1}}>
+                <Button transparent>
+                  <Icon name='menu' />
+                </Button>
+              </Left>
+              <Body style={{flex:5}}>
+                <Title>Floresta</Title>
+              </Body>
+              <Right style={{flex:1}}>
+                
+              </Right>
+            </Header>              
+            
+            <View style={{flex:1,justifyContent:'center'}}>
+              <View style={styles.row}>
+                <View style={styles.column}>
                   <PlayButton/>
-                </Col>
-                <Col style={styles.column}>
+                </View>
+                <View style={styles.column}>
                   <PlayButton/>
-                </Col>
-              </Row>
-              <Row>
-                <Col style={styles.column}>
+                </View>
+              </View>
+              <View style={styles.row}>
+                <View style={styles.column}>
                   <PlayButton/>
-                </Col>
-                <Col style={styles.column}>
+                </View>
+                <View style={styles.column}>
                   <PlayButton/>
-                </Col>
-              </Row>
-              <Row>
-                <Col style={styles.column}>
+                </View>
+              </View>
+              <View style={styles.row}>
+                <View style={styles.column}>
                   <PlayButton/>
-                </Col>
-                <Col style={styles.column}>
+                </View>
+                <View style={styles.column}>
                   <PlayButton/>
-                </Col>
-              </Row>
-            </Grid>
-          </Content>
-        </Container>      
-
-
+                </View>
+              </View>
+            </View>
+          </Container>      
         </Image>
     );
   }
@@ -87,6 +84,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
+  toolbar:{
+    backgroundColor:'#00796B'
+  },
   bar:{
     height:56,
     justifyContent:'center',
@@ -95,13 +95,15 @@ const styles = StyleSheet.create({
   bar_title:{
     fontSize:26
   },
-  content:{
-    backgroundColor:'blue',
+  content:{ 
     flex:1
   },
+  row:{
+    height:150,    
+    flexDirection:'row',
+    justifyContent:'space-around'    
+  },
   column:{
-    alignItems:'center',
-    justifyContent:'center',
-    height:150
+    flex:1
   }
 });
